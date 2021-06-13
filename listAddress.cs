@@ -25,12 +25,12 @@ public class listAddress{
 
 
                 ipList.Add(new getIpaddress{
-                   addressFamily =  currAdd.AddressFamily.ToString(),
-                   scopeId = currAdd.ScopeId.ToString(),
-                   address = currAdd.ToString(),
-                   getBytes= sBytes,
-                    getType= currAdd.GetType().ToString(),
-                   getHashCode = currAdd.GetHashCode().ToString(),
+                         addressFamily =  currAdd.AddressFamily.ToString(),
+                         scopeId = currAdd.ScopeId.ToString(),
+                         address = currAdd.ToString(),
+                         getBytes= sBytes,
+                         getType= currAdd.GetType().ToString(),
+                         getHashCode = currAdd.GetHashCode().ToString(),
                 });
                             
             }
