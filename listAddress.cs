@@ -6,13 +6,10 @@ using System;
 namespace Get_ipaddress{
 
 public class listAddress{
-
-     public static List<getIpaddress> loadAddress(string server){
-         
-   
+    public static List<getIpaddress> loadAddress(string server){
+          
          IPHostEntry heserver = Dns.GetHostEntry(server);
-    
-      
+          
          List<getIpaddress> ipList = new List<getIpaddress>();
 
     try{
@@ -21,8 +18,6 @@ public class listAddress{
 
                      Byte[] bytes = currAdd.GetAddressBytes(); string sBytes = "";
                             for (int i = 0; i < bytes.Length; i++){sBytes += bytes[i]; }
-
-
 
                 ipList.Add(new getIpaddress{
                          addressFamily =  currAdd.AddressFamily.ToString(),
@@ -38,8 +33,8 @@ public class listAddress{
     }
     catch (Exception e)
                     {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.Write("[DoResolve] Exception: \n\n\n" + e.ToString(),Console.ForegroundColor);
+                        // Console.ForegroundColor = ConsoleColor.Red;
+                        // Console.Write("[DoResolve] Exception: \n\n\n" + e.ToString(),Console.ForegroundColor);
                     }
 
          return ipList;
