@@ -25,7 +25,6 @@ namespace Get_ipaddress{
                 }
                 }   
                  void CommandList(){ Console.ForegroundColor = ConsoleColor.DarkYellow;   
-
                                 Console.Clear();
                                 Console.WriteLine("| 'A' - gethostnetwork | 'B' - | 'C' - clear |",Console.ForegroundColor);
                 }            
