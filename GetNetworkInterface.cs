@@ -1,7 +1,7 @@
 using System;
 using System.Net.NetworkInformation;
 using System.Linq;
-using System.Text.RegularExpressions;
+using System.Threading;
 
 namespace Get_ipaddress{
     public class GetNetworkInterface{
@@ -11,8 +11,12 @@ namespace Get_ipaddress{
             //Retrive all network interface using GetAllNetworkInterface() method off NetworkInterface class.
             NetworkInterface [] niArr = NetworkInterface.GetAllNetworkInterfaces();
 
-            Console.WriteLine("Retriving basic information of network.\n\n");
+    
+
+            Console.WriteLine("\nRetriving basic information of network...\n\n");
             //Display all information of NetworkInterface using foreach loop.
+
+                    Thread.Sleep(1500);
             try{
                 foreach(NetworkInterface tempNetworkInterface in niArr)
                 {   
@@ -49,6 +53,7 @@ namespace Get_ipaddress{
                     Console.WriteLine("Cannot read");
                 }
         }
+   
 
     }
 }
