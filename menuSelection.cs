@@ -12,7 +12,7 @@ namespace Get_ipaddress{
                 switch(swS){
                     case "A":  
                     CommandList();
-                    getHostNetwork.getIpPrint(server); break;
+                     break;
                     case "B":
                     CommandList();
                     LoadAddress.loadAddress(server); break;
