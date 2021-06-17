@@ -20,8 +20,8 @@ namespace Get_ipaddress
                         
                         if (ip.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork){  
 
-                            Console.WriteLine(ip.Address.ToString());}
-                    }
+                            Console.Write(ip.Address.ToString()+"\n\n");}
+                     }
                 }  
             }
 

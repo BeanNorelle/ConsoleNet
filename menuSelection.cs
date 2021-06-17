@@ -4,7 +4,7 @@ namespace Get_ipaddress{
     public class menuSelection{
             public static void menuSelect(string server)
             {   
-                Console.WriteLine("| 'A' - gethostnetwork | 'B' - | 'C' - clear |");
+                    CommandList();
                 while (true)
                 {
                  //   CommandList();                    
@@ -17,16 +17,19 @@ namespace Get_ipaddress{
                     CommandList();
                     LoadAddress.loadAddress(server); break;
                     case "C":
+                     CommandList();
+                     GetNetworkInterface.GetNetInterface();
                      break;
-                    //default: 
-                    //CommandList();
-                    //Console.WriteLine("Invalid entry"); 
-                   // break;
+                    
+                    default: 
+                     CommandList();
+                     Console.WriteLine("Invalid entry"); 
+                     break;
                 }
                 }   
                  void CommandList(){ Console.ForegroundColor = ConsoleColor.DarkYellow;   
                                 Console.Clear();
-                                Console.WriteLine("| 'A' - gethostnetwork | 'B' - | 'C' - clear |",Console.ForegroundColor);
+                                Console.WriteLine("\n| 'A' - gethostnetwork | 'B' - Get Net Inteface| 'C' - clear |\n",Console.ForegroundColor);
                 }            
             }
 
