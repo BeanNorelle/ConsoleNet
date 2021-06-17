@@ -20,7 +20,10 @@ namespace Get_ipaddress{
                     Console.WriteLine("Network Name                :  " + tempNetworkInterface.Name);
                     Console.WriteLine("Network interface type      :  " + tempNetworkInterface.NetworkInterfaceType.ToString());
                     Console.WriteLine("Network Operational Status  :  " + tempNetworkInterface.OperationalStatus.ToString());
-                    Console.WriteLine("Network Spped               :  " + tempNetworkInterface.Speed);
+
+                    string ToBytes =  (tempNetworkInterface.Speed==-1)? "No Available Data" : ((((long)tempNetworkInterface.Speed)/1024)/1000).ToString()+" MB/s";
+                  
+                    Console.WriteLine("Network Speed               :  " + ToBytes);
                     Console.WriteLine("Support Multicast           :  " + tempNetworkInterface.SupportsMulticast);
                     Console.Write("Network IP                  :  " );
                      

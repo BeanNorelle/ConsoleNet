@@ -12,6 +12,7 @@ namespace Get_ipaddress{
                 switch(swS){
                     case "A":  
                     CommandList();
+                    GetNetworkInterface.GetNetInterface();
                      break;
                     case "B":
                     CommandList();
