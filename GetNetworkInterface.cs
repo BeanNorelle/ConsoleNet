@@ -1,6 +1,7 @@
 using System;
 using System.Net.NetworkInformation;
-using System.Net.Sockets;
+using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Get_ipaddress{
     public class GetNetworkInterface{
@@ -14,13 +15,20 @@ namespace Get_ipaddress{
             //Display all information of NetworkInterface using foreach loop.
             try{
                 foreach(NetworkInterface tempNetworkInterface in niArr)
-                {
+                {   
                     Console.WriteLine("Network Description         :  " + tempNetworkInterface.Description);
                     Console.WriteLine("Network ID                  :  " + tempNetworkInterface.Id);
                     Console.WriteLine("Network Name                :  " + tempNetworkInterface.Name);
+
+                    
+                    string GetMac = (!String.IsNullOrEmpty(tempNetworkInterface.GetPhysicalAddress().ToString())) ? string.Join(":", Enumerable.Range(0, 6)
+                    .Select(i => tempNetworkInterface.GetPhysicalAddress().ToString().Substring(i * 2, 2))) : "No Available Data"; // add ':' after every second character 
+
+                    Console.WriteLine("Network Physical Address    :  " + GetMac);
+                   
                     Console.WriteLine("Network interface type      :  " + tempNetworkInterface.NetworkInterfaceType.ToString());
                     Console.WriteLine("Network Operational Status  :  " + tempNetworkInterface.OperationalStatus.ToString());
-
+                 
                     string ToBytes =  (tempNetworkInterface.Speed==-1)? "No Available Data" : ((((long)tempNetworkInterface.Speed)/1024)/1000).ToString()+" MB/s";
                   
                     Console.WriteLine("Network Speed               :  " + ToBytes);
