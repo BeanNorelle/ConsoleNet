@@ -20,7 +20,7 @@ namespace Get_ipaddress{
             try{
                 foreach(NetworkInterface tempNetworkInterface in niArr)
                 {   
-                    Console.WriteLine("Network Description         :  " + tempNetworkInterface.Description);
+                    Console.WriteLine("\n\nNetwork Description         :  " + tempNetworkInterface.Description);
                     Console.WriteLine("Network ID                  :  " + tempNetworkInterface.Id);
                     Console.WriteLine("Network Name                :  " + tempNetworkInterface.Name);
 
@@ -29,7 +29,14 @@ namespace Get_ipaddress{
                     .Select(i => tempNetworkInterface.GetPhysicalAddress().ToString().Substring(i * 2, 2))) : "No Available Data"; // add ':' after every second character 
 
                     Console.WriteLine("Network Physical Address    :  " + GetMac);
-                   
+                        Console.Write("Network IP                  :  " );
+                     
+                     //get ipaddress 
+                      foreach (UnicastIPAddressInformation ip in tempNetworkInterface.GetIPProperties().UnicastAddresses){                        
+                        if (ip.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork){  
+
+                            Console.Write(ip.Address.ToString()+"\n");}
+                         }
                     Console.WriteLine("Network interface type      :  " + tempNetworkInterface.NetworkInterfaceType.ToString());
                     Console.WriteLine("Network Operational Status  :  " + tempNetworkInterface.OperationalStatus.ToString());
                  
@@ -37,17 +44,8 @@ namespace Get_ipaddress{
                   
                     Console.WriteLine("Network Speed               :  " + ToBytes);
                     Console.WriteLine("Support Multicast           :  " + tempNetworkInterface.SupportsMulticast);
-                    Console.Write("Network IP                  :  " );
-                     
-                     //get ipaddress 
-                      foreach (UnicastIPAddressInformation ip in tempNetworkInterface.GetIPProperties().UnicastAddresses){                        
-                        if (ip.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork){  
-
-                            Console.Write(ip.Address.ToString()+"\n\n");}
-                         }
-          
-               
-                }
+                              
+                    }
             }
                 catch{
                     Console.WriteLine("Cannot read");
