@@ -11,8 +11,8 @@ namespace Get_ipaddress
         public static void startProg(){
 
              string server = Dns.GetHostName();
-             
-             menuSelection.menuSelect(server);
+             string pingAddress = "192.168.1.1";
+             menuSelection.menuSelect(server,pingAddress);
                     
         }
 

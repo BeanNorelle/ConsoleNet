@@ -2,7 +2,7 @@ using System;
 
 namespace Get_ipaddress{
     public class menuSelection{
-            public static void menuSelect(string server)
+            public static void menuSelect(string server, string pingAddress)
             {   
                     CommandList();
                 while (true)
@@ -12,7 +12,7 @@ namespace Get_ipaddress{
                 switch(swS){
                     case "A":  
                     CommandList();
-                    GetNetworkInterface.GetNetInterface();
+                    Console.WriteLine("Pinged address {0} is {1}",pingAddress, ping.PingHost(pingAddress));
                      break;
                     case "B":
                     CommandList();
