@@ -2,7 +2,7 @@ using System;
 
 namespace Get_ipaddress{
     public class menuSelection{
-            public static void menuSelect(string server, string pingAddress)
+            public static void menuSelect(string server)
             {   
                     CommandList();
                 while (true)
@@ -12,7 +12,7 @@ namespace Get_ipaddress{
                 switch(swS){
                     case "A":  
                     CommandList();
-                    Console.WriteLine("Pinged address {0} is {1}",pingAddress, ping.PingHost(pingAddress));
+                    
                      break;
                     case "B":
                     CommandList();
@@ -20,6 +20,10 @@ namespace Get_ipaddress{
                     case "C":
                      CommandList();
                      GetNetworkInterface.GetNetInterface();
+                     break;
+                    case "D":
+                     CommandList();
+                     PingRange.pingRange();
                      break;
                     
                     default: 
@@ -30,7 +34,7 @@ namespace Get_ipaddress{
                 }   
                  void CommandList(){ Console.ForegroundColor = ConsoleColor.DarkYellow;   
                                 Console.Clear();
-                                Console.WriteLine("\n| 'A' - gethostnetwork | 'B' - Get Net Inteface| 'C' - clear |\n",Console.ForegroundColor);
+                                Console.WriteLine("\n| 'A' - gethostnetwork | 'B' - Load Address  | 'C' - Get Net Interface | 'D' - Ping Ip Range |\n",Console.ForegroundColor);
                 }            
             }
 

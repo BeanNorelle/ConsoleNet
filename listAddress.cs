@@ -31,7 +31,7 @@ public class listAddress{
             }
 
     }
-    catch (Exception e)
+    catch (Exception)
                     {
                         // Console.ForegroundColor = ConsoleColor.Red;
                         // Console.Write("[DoResolve] Exception: \n\n\n" + e.ToString(),Console.ForegroundColor);
