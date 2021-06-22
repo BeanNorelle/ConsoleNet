@@ -17,6 +17,8 @@ namespace Get_ipaddress{
             //Display all information of NetworkInterface using foreach loop.
 
                     Thread.Sleep(1500);
+
+                    ClearCurrentConsoleLine.ClearLine();
             try{
                 foreach(NetworkInterface tempNetworkInterface in niArr)
                 {   
