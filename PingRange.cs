@@ -33,7 +33,7 @@ namespace Get_ipaddress{
             return pingable;
         }
 
-        public static void pingRange(){
+        public static void pingRange(int IpRange){
 
 
 
@@ -41,19 +41,24 @@ namespace Get_ipaddress{
                 string canPing = "";
                 string  pingAddress = "";
 
-                Console.WriteLine("\n\nPinging Range of IP Address . . .");
+                Console.WriteLine("\n\nPinging Range of IP Address...");
 
                 Thread.Sleep(1500);
+                //Clear Console line "Pinging Range of IP Address . . ."
+                Console.SetCursorPosition(0, Console.CursorTop - 1);
+                ClearCurrentConsoleLine.ClearLine();
                 
-  //              Console.Clear();
+            
 
-                for(int i = 1;i<20;i++){
+                int IpCount = 0;
+
+                for(int i = 1;i<=IpRange;i++){
                     try
                     {
                         pingResponse = new Ping();
                         pingAddress = "192.168.1."+i.ToString();
                         PingReply reply = pingResponse.Send(pingAddress);
-
+                        IpCount++;
                         if(reply.Status == IPStatus.Success){
                             canPing = "Responsive";
                              Console.ForegroundColor = ConsoleColor.Green;
@@ -75,11 +80,15 @@ namespace Get_ipaddress{
                     {
                         if(pingResponse!=null) pingResponse.Dispose();
                          Console.ForegroundColor = ConsoleColor.Yellow;
-                    }
-                    
-                }       
+
+                         
+                    }                
+                }    
+                   Console.WriteLine("\nFinished Pinging {0} address", IpCount);   
 
         }
+
+    
     }
 
 }

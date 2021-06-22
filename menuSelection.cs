@@ -17,13 +17,17 @@ namespace Get_ipaddress{
                     case "B":
                     CommandList();
                     LoadAddress.loadAddress(server); break;
+
                     case "C":
                      CommandList();
                      GetNetworkInterface.GetNetInterface();
                      break;
-                    case "D":
+
+                    case "D":  
                      CommandList();
-                     PingRange.pingRange();
+                     Console.WriteLine("Input IP range:");
+                     string IpRange = Console.ReadLine();
+                     PingRange.pingRange(Convert.ToInt32(IpRange));
                      break;
                     
                     default: 
