@@ -5,8 +5,10 @@ namespace Get_ipaddress{
 
               private static void CommandList(string server){ Console.ForegroundColor = ConsoleColor.DarkYellow;   
                                 Console.Clear();
-               Console.WriteLine("Hostname: {0}", server);
-               Console.WriteLine("Gateway:  {0}", GetGateway.NetworkGateway());
+               Console.WriteLine("\nA Simple Console .NET Application. Alpha 0.1. 2021");               
+               Console.WriteLine("Developed by Bean Norelle E.Sobremisana\n\n");
+               Console.WriteLine("Hostname          :  {0}", server);
+               Console.WriteLine("Gateway           :  {0}\n", GetGateway.NetworkGateway());
                Console.WriteLine("\n| 'X' - Exit App | 'B' - Load Address  | 'C' - Get Net Interface | 'D' - Ping Ip Range |\n",Console.ForegroundColor);
                
                 }  
