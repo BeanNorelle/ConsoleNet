@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Net;
+using System.Net.Sockets;
+using System.Net.NetworkInformation;
 namespace Get_ipaddress
 {
     class Program
@@ -8,9 +10,12 @@ namespace Get_ipaddress
         public static void startProg(){
 
              string server = Dns.GetHostName(); 
+
+             Console.WriteLine(GetGateway.NetworkGateway());
            
-            menuSelection.menuSelect(server);    //calls a method from menuselection class               
+             menuSelection.menuSelect(server);    //calls a method from menuselection class               
         }       
+        
      }
     }
 
