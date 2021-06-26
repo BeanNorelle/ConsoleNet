@@ -7,15 +7,10 @@ namespace Get_ipaddress
         static void Main() => startProg();
         public static void startProg(){
 
-             string server = Dns.GetHostName();
+             string server = Dns.GetHostName(); 
            
-            menuSelection.menuSelect(server);
-                    
-        }
-
-        
+            menuSelection.menuSelect(server);    //calls a method from menuselection class               
+        }       
      }
-
-
     }
 

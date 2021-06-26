@@ -17,6 +17,5 @@ namespace Get_ipaddress{
                 Console.WriteLine(".............................................\n\n",Console.ForegroundColor);
             } 
         }
-
     }
 }

@@ -2,12 +2,14 @@ using System;
 
 namespace Get_ipaddress{
     public class menuSelection{
+
+                //this method takes user input and returns in a switch method  
             public static void menuSelect(string server)
             {   
                     CommandList();
                 while (true)
                 {
-                 //   CommandList();                    
+                                   
                 string swS = Console.ReadLine();
                 switch(swS){
                     case "A":  
@@ -41,7 +43,6 @@ namespace Get_ipaddress{
                                 Console.WriteLine("\n| 'A' - gethostnetwork | 'B' - Load Address  | 'C' - Get Net Interface | 'D' - Ping Ip Range |\n",Console.ForegroundColor);
                 }            
             }
-
         }
 }
 
