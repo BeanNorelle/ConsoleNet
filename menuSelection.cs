@@ -3,6 +3,11 @@ using System;
 namespace Get_ipaddress{
     public class menuSelection{
 
+              private static void CommandList(){ Console.ForegroundColor = ConsoleColor.DarkYellow;   
+                                Console.Clear();
+               Console.WriteLine("\n| 'X' - Exit App | 'B' - Load Address  | 'C' - Get Net Interface | 'D' - Ping Ip Range |\n",Console.ForegroundColor);
+                }  
+
                 //this method takes user input and returns in a switch method  
             public static void menuSelect(string server)
             {   
@@ -12,9 +17,8 @@ namespace Get_ipaddress{
                                    
                 string swS = Console.ReadLine();
                 switch(swS){
-                    case "A":  
-                    CommandList();
-                    
+                    case "X":  
+                    Environment.Exit(0); //application exits clean
                      break;
                     case "B":
                     CommandList();
@@ -38,10 +42,7 @@ namespace Get_ipaddress{
                      break;
                 }
                 }   
-                 void CommandList(){ Console.ForegroundColor = ConsoleColor.DarkYellow;   
-                                Console.Clear();
-                                Console.WriteLine("\n| 'A' - gethostnetwork | 'B' - Load Address  | 'C' - Get Net Interface | 'D' - Ping Ip Range |\n",Console.ForegroundColor);
-                }            
+                        
             }
         }
 }
